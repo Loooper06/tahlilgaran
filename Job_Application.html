@@ -1,0 +1,506 @@
+<html lang="en">
+
+<head>
+    <title>ثبت درخواست-تحلیلگران</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/Styles-main.min.css">
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./css/OwlCarousel/owl.carousel.css">
+    <link rel="stylesheet" href="./css/OwlCarousel/owl.theme.default.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!--font styles-->
+    <style>
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: bold;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Bold.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Bold.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Bold.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Bold.ttf") format("truetype");
+        }
+    
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 500;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Medium.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Medium.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Medium.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Medium.ttf") format("truetype");
+        }
+    
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 300;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Light.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Light.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Light.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Light.ttf") format("truetype");
+        }
+    
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: normal;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\).eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\).woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\).woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\).ttf") format("truetype");
+        }
+    
+        body {
+            font-family: IRANSans, Fallback, sans-serif !important;
+            padding: 0 0;
+            margin: 0 0;
+            overflow-x: hidden !important;
+            direction: rtl !important;
+        }
+    </style>
+    <!--font styles-->
+</head>
+
+<body>
+    <!-------------- PreLoader-------------->
+    <div class="preload" id="preloader">
+
+        <lord-icon src="https://cdn.lordicon.com/yqbqexfk.json" trigger="loop" delay="300"
+            colors="primary:#2ba9dc,secondary:#e95d31" stroke="69" style="width:250px;height:250px">
+        </lord-icon>
+    </div>
+    <!-------------- Header-------------->
+    <header class="position-relative">
+        <section class="header-top_bar-Index" id="header-top_bar">
+            <div class="container-fluid container-lg">
+                <div class="row">
+                    <div class="col-12 pt-2 pb-2 d-flex top_bar">
+                        <div class="col-10 main-logo-container">
+                            <a href="./index.html"><img src="./assets/img/logo.png" class="main-logo"
+                                    alt="تحلیلگران"></a>
+                        </div>
+                        <div class="col-2 d-none d-lg-flex justify-content-around align-items-center">
+                            <div class="header-icon-holder position-relative">
+                                <i class="bi bi-search" id="search_icon"></i>
+                                <div class="search_box position-absolute " id="search_box">
+                                    <form class="search_box-form">
+                                        <input type="text" placeholder="جستجو" class="p-1">
+                                        <button type="button" class="p-1 px-2"><i class="bi bi-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="header-icon-holder position-relative d-none">
+                                <i class="bi bi-cart" id="cart-icon"></i>
+                                <div class="header-cart position-absolute" id="header-cart">
+                                    <div
+                                        class="header-cart_item text-center d-flex justify-content-center align-items-center">
+                                        <p>سبد خرید شما خالی است</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-icon-holder position-relative d-none">
+                                <i class="bi bi-person" id="login-icon" style="font-size: 20px;"></i>
+                                <div class="header-login position-absolute" id="header-login">
+                                    <article>
+                                        <p class="p-0 m-0 mb-2">ایمیل</p>
+                                        <form>
+                                            <input type="email" class="w-100 p-1">
+                                        </form>
+                                    </article>
+                                    <article class="mt-3">
+                                        <p class="p-0 m-0 mb-2">گذرواژه</p>
+                                        <form>
+                                            <input type="password" class="w-100 p-1">
+                                        </form>
+                                    </article>
+                                    <article class="w-100 d-flex mt-4">
+                                        <div class="ms-2 pt-1"><input type="checkbox"></div>
+                                        <div>
+                                            <p>مرا به خاطر بسپار</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <a href="#"><button type="button" class="w-100 p-2">ورود</button></a>
+                                        <a href="#"><button type="button" class="w-100 p-2 mt-3">ثبت نام</button></a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 d-flex d-lg-none pt-3">
+                            <div class="burger-menu-icon">
+                                <i class="bi bi-justify" id="burger-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="header-bottom_bar-Index d-lg-block mt-lg-0 mt-4" id="header-bottom_bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 p-0 bottom_bar">
+                        <ul class=" p-0 pe-3">
+                            <li><a href="./index.html">صفحه اصلی</a></li>
+                            <li>
+                                <a href="#">شتاب دهنده</a>
+                                <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                <ul class="sub-menu_layer">
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">پردیس</a>
+                            </li>
+                            <li>
+                                <a href="#">تخته وب</a>
+                                <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                <ul class="sub-menu_layer">
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">TLMS</a>
+                            </li>
+                            <li>
+                                <a href="./About__Us.html">درباره ما</a>
+                            </li>
+                            <li>
+                                <a href="./Contact__Us.html">تماس با ما</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="header-menu_Scroll pb-sm-1 pt-sm-2 pb-0 pt-0 d-none" id="header-menu_Scroll">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="menu_scroll d-flex p-0 ">
+                        <div class="col-lg-2 col-3 ms-3">
+                            <a href="./index.html"><img src="./assets/img/logo.png" class="main-logo"
+                                    alt="تحلیلگران"></a>
+                        </div>
+                        <div class="col-7 me-5 d-lg-block d-none pt-4">
+                            <div class="col-12 p-0">
+                                <ul class=" p-0 pe-0 m-0">
+                                    <li><a href="./index.html">صفحه اصلی</a></li>
+                                    <li>
+                                        <a href="#">شتاب دهنده</a>
+                                        <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                        <ul class="sub-menu_layer">
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">پردیس</a></li>
+                                    <li>
+                                        <a href="#">تخته وب</a>
+                                        <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                        <ul class="sub-menu_layer">
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">TLMS</a></li>
+                                    <li><a href="./About__Us.html">درباره ما</a></li>
+                                    <li><a href="./Contact__Us.html">تماس با ما</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-3 d-none d-lg-flex justify-content-start align-items-center">
+                            <div class="header-icon-holder ms-4 position-relative">
+                                <i class="bi bi-search" id="search_icon-scroll"></i>
+                                <div class="search_box position-absolute " id="search_box-scroll">
+                                    <form class="search_box-form">
+                                        <input type="text" placeholder="جستجو" class="p-1">
+                                        <button type="button" class="p-1 px-2"><i class="bi bi-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9 d-flex d-lg-none justify-content-end ps-5 pt-3">
+                            <div class="burger-menu-icon">
+                                <i class="bi bi-justify" id="burger-icon-Scroll"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="burger-menu-container" id="burger-menu-container">
+            <div class="burger-close">
+                <i class="bi bi-x" id="burger-close-icon"></i>
+            </div>
+            <div class="burger-search">
+                <input type="text" placeholder="ورود واژه کلیدی...">
+                <a href="#"><button><i class="bi bi-search"></i></button></a>
+            </div>
+            <div class="burger-navs">
+                <ul class="burger-main-navs">
+                    <li class="burger-home">
+                        <a href="./index.html">خانه</a>
+                    </li>
+                    <li class="burger-weblog">
+                        <span class="main-link">
+                            <a href="#">وبلاگ</a>
+                        </span>
+                    </li>
+                    <li class="burger-shetabdahandeh" id="burger-shetabdahandeh">
+                        <span class="main-link">
+                            <a href="#">شتاب دهنده</a>
+                            <i class="bi bi-plus"></i>
+                        </span>
+                        <ul class="Burger_sub-menu_layer" id="Shetab_sub">
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                        </ul>
+                    </li>
+                    <li class="burger-pardis">
+                        <span class="main-link">
+                            <a href="#">پردیس</a>
+                        </span>
+                    </li>
+                    <li class="burger-Takhteh_web" id="burger-Takhteh_web">
+                        <span class="main-link">
+                            <a href="#">تخته وب</a>
+                            <i class="bi bi-plus"></i>
+                        </span>
+                        <ul class="Burger_sub-menu_layer" id="Takhteh_sub">
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                        </ul>
+                    </li>
+                    <li class="burger-TLMS">
+                        <span class="main-link">
+                            <a href="#">آموزش مجازی (TLMS)</a>
+                        </span>
+                    </li>
+                    <li class="burger-contact-us">
+                        <a href="./About__Us.html">درباره ما</a>
+                    </li>
+                    <li class="burger-contact-us">
+                        <a href="./Contact__Us.html">تماس با ما</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-------------- Main-------------->
+    <main>
+        <section class="Job_Main_Title_Section py-4 mt-1" style="background: url('./assets/img/Job_Head_bg-min.jpg');">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="Section_Content mx-auto">
+                        <div class="All_Opportunity text-center text-sm-end col-12 mt-4">
+                            <a href="./Job_Opportunity-list.html" class="text-white py-2 px-4 rounded">همه فرصت های
+                                همکاری</a>
+                        </div>
+                        <div class="Job_Title col-12 text-center text-white mt-4">
+                            <h1>برنامه نویس Front End</h1>
+                        </div>
+                        <div class="Job_Caption mt-4 col-12 d-flex justify-content-center text-white">
+                            <lord-icon src="https://cdn.lordicon.com/zzcjjxew.json" trigger="morph"
+                                colors="primary:#ffffff,secondary:#ffffff" stroke="100" style="width:45px;height:45px">
+                            </lord-icon>
+                            <p class="mt-2 pt-1 me-2 fw-bold">ایران ، تبریز</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Application_Title col-12 text-center fw-bold mt-4">
+            <div class="container">
+                <div class="row">
+                    <h3>
+                        درخواست همکاری
+                    </h3>
+                </div>
+            </div>
+        </section>
+        <section class="App_Forms mt-5 mx-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12 mt-3">
+                        <p>
+                            نام و نام خانوادگی
+                        </p>
+                        <input type="text" class="w-100 px-2 py-2" placeholder="نام و نام خانوادگی">
+                    </div>
+                    <div class="col-lg-6 col-12 mt-3">
+                        <p>
+                            تاریخ تولد
+                        </p>
+                        <input type="text" class="w-100 px-2 py-2" placeholder="برای مثال**/**/**13">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-6 col-12 mt-3">
+                        <p>
+                            ایمیل
+                        </p>
+                        <input type="email" class="w-100 px-2 py-2" placeholder="loo****@gmail.com">
+                    </div>
+                    <div class="col-lg-6 col-12 mt-3">
+                        <p>
+                           شماره تماس
+                        </p>
+                        <input type="text" class="w-100 px-2 py-2" placeholder="09142324254">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <p>نشانی محل سکونت</p>
+                        <textarea name="User_Address" rows="7" class="w-100 px-2 py-2" placeholder="نشانی محل سکونت"></textarea>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-6 col-12 mt-3">
+                        <p>
+                            آخرین مدرک تحصیلی
+                        </p>
+                        <select class="w-100 px-2 py-2">
+                            <option value="">مدرک تحصیلی</option>
+                            <option value="">دیپلم</option>
+                            <option value="">کاردانی</option>
+                            <option value="">کارشناسی</option>
+                            <option value="">کارشناسی ارشد</option>
+                            <option value="">دکتری</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6 col-12 mt-3">
+                        <p>
+                            رشته تحصیلی
+                        </p>
+                        <input type="text" class="w-100 px-2 py-2" placeholder="برای مثال کامپیوتر">
+                    </div>
+                </div>
+                <div class="row mt-3 d-flex">
+                    <p>
+                        جنسیت : 
+                    </p>
+                    <form action="">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">مذکر</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">مؤنث</label>
+                          </div>
+                    </form>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <textarea name="description" class="w-100 px-2 py-2" rows="7" placeholder="توضیحات‌ (اختیاری)"></textarea>
+                    </div>
+                </div>
+                <div class="mt-3 App_Submit text-start"> 
+                    <a href="#"><button type="submit" class="col-lg-3 col-md-6 col-12 px-3 py-2 rounded">ثبت درخواست</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-------------- Footer-------------->
+    <footer style="background-image: url('./assets/img/footer_bg.jpg');">
+        <section class="Footer" style="background-color: #040f1dd0;background-attachment: fixed;">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-lg-5 col-md-6 col-12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators">
+                            <p>وبینار تحلیلگران</p><span></span>
+                        </div>
+                        <div class="d-flex">
+                            <div><a href="./index.html">
+                                    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+                                    <lord-icon src="https://cdn.lordicon.com/smeqxwcv.json" trigger="loop" delay="3000"
+                                        colors="primary:#2ba9dc,secondary:#e95d31" stroke="25"
+                                        style="width:130px;height:100px;transform: translateY(-20px);">
+                                    </lord-icon>
+                                </a></div>
+                            <div>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 d-none d-lg-block"></div>
+                    <div class="col-lg-5 col-md-6 col-12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators">
+                            <p>خبرنامه</p><span></span>
+                        </div>
+                        <div class="GetNews">
+                            <div>
+                                <p>اطلاع از آخرین اخبار</p>
+                            </div>
+                            <div class="d-flex position-relative">
+                                <input class="getnews_input rounded-end rounded-start" type="email">
+                                <button id="getnews_btn" class="rounded-start" type="submit">ارسال</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex flex-wrap flex-lg-nowrap">
+                    <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators">
+                            <p>برچسب ها</p><span></span>
+                        </div>
+                        <div class="d-flex flex-wrap Tags">
+                            <p href="#">تحلیلگران</p>
+                            <p>نرم افزار</p>
+                            <p>شبکه</p>
+                            <p>وبینار</p>
+                            <p>دانش بنیان</p>
+                            <p>برنامه نویسی</p>
+                            <p>هاست</p>
+                            <p>آموزش مجازی</p>
+                            <p>پارک علم و فناوری</p>
+                            <p>سرور مجازی</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators">
+                            <p>دسترسی</p><span></span>
+                        </div>
+                        <div class="accessibility">
+                            <a href="./index.html"> <span class="link-arrow"></span> صفحه اصلی</a>
+                            <a href="./News_List.html"> <span class="link-arrow"></span> اخبار</a>
+                            <a href="./blog-list.html"> <span class="link-arrow"></span> وبلاگ</a>
+                            <a href="./Job_Opportunity-list.html"> <span class="link-arrow"></span> فرصت همکاری</a>
+                            <a href="./About__Us.html"> <span class="link-arrow"></span> درباره ما</a>
+                            <a href="./Contact__Us.html"> <span class="link-arrow"></span> تماس ما</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators">
+                            <p>نماد ها</p><span></span>
+                        </div>
+                        <div class="samples d-flex justify-content-around flex-wrap">
+                            <a href="#"><img src="./assets/img/Enamad.png" alt="نماد اعتماد الکترونیکی"></a>
+                            <a href="#"><img src="./assets/img/samandehi.png" alt="نشان ثبت اعتماد الکترونیکی"></a>
+                            <a href="#"><img src="./assets/img/logo (1).png" alt="عضو اتحادیه کسب و کار های مجازی"></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <section class="copyrights">
+                    <p> © تمام حقوق برای شرکت تحلیلگران محفوظ است.</p>
+                </section>
+            </div>
+        </section>
+    </footer>
+    <!-------------- Scripts-------------->
+    <script src="./assets/js/jQuery/jQuery.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.js"></script>
+    <script src="./assets/js/OwlCarousel/owl.carousel.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+</body>
+
+</html>

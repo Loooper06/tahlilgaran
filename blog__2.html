@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>وبلاگ-تحلیلگران</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/Styles-main.min.css">
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./css/OwlCarousel/owl.carousel.css">
+    <link rel="stylesheet" href="./css/OwlCarousel/owl.theme.default.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!--font styles-->
+    <style>
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: bold;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Bold.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Bold.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Bold.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Bold.ttf") format("truetype");
+        }
+    
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 500;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Medium.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Medium.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Medium.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Medium.ttf") format("truetype");
+        }
+    
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 300;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Light.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Light.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Light.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Light.ttf") format("truetype");
+        }
+    
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: normal;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\).eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\).woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\).woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\).ttf") format("truetype");
+        }
+    
+        body {
+            font-family: IRANSans, Fallback, sans-serif !important;
+            padding: 0 0;
+            margin: 0 0;
+            overflow-x: hidden !important;
+            direction: rtl !important;
+        }
+    </style>
+    <!--font styles-->
+</head>
+
+<body>
+
+    <!-------------- PreLoader-------------->
+    <div class="preload" id="preloader">
+
+        <lord-icon src="https://cdn.lordicon.com/yqbqexfk.json" trigger="loop" delay="300"
+            colors="primary:#2ba9dc,secondary:#e95d31" stroke="69" style="width:250px;height:250px">
+        </lord-icon>
+    </div>
+        <!-------------- Header-------------->
+        <header class="position-relative">
+            <section class="header-top_bar-Index" id="header-top_bar">
+                <div class="container-fluid container-lg">
+                    <div class="row">
+                        <div class="col-12 pt-2 pb-2 d-flex top_bar">
+                            <div class="col-10 main-logo-container">
+                                <a href="./index.html"><img src="./assets/img/logo.png" class="main-logo"
+                                        alt="تحلیلگران"></a>
+                            </div>
+                            <div class="col-2 d-none d-lg-flex justify-content-around align-items-center">
+                                <div class="header-icon-holder position-relative">
+                                    <i class="bi bi-search" id="search_icon"></i>
+                                    <div class="search_box position-absolute " id="search_box">
+                                        <form class="search_box-form">
+                                            <input type="text" placeholder="جستجو" class="p-1">
+                                            <button type="button" class="p-1 px-2"><i class="bi bi-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="header-icon-holder position-relative d-none">
+                                    <i class="bi bi-cart" id="cart-icon"></i>
+                                    <div class="header-cart position-absolute" id="header-cart">
+                                        <div
+                                            class="header-cart_item text-center d-flex justify-content-center align-items-center">
+                                            <p>سبد خرید شما خالی است</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header-icon-holder position-relative d-none">
+                                    <i class="bi bi-person" id="login-icon" style="font-size: 20px;"></i>
+                                    <div class="header-login position-absolute" id="header-login">
+                                        <article>
+                                            <p class="p-0 m-0 mb-2">ایمیل</p>
+                                            <form>
+                                                <input type="email" class="w-100 p-1">
+                                            </form>
+                                        </article>
+                                        <article class="mt-3">
+                                            <p class="p-0 m-0 mb-2">گذرواژه</p>
+                                            <form>
+                                                <input type="password" class="w-100 p-1">
+                                            </form>
+                                        </article>
+                                        <article class="w-100 d-flex mt-4">
+                                            <div class="ms-2 pt-1"><input type="checkbox"></div>
+                                            <div>
+                                                <p>مرا به خاطر بسپار</p>
+                                            </div>
+                                        </article>
+                                        <article>
+                                            <a href="#"><button type="button" class="w-100 p-2">ورود</button></a>
+                                            <a href="#"><button type="button" class="w-100 p-2 mt-3">ثبت نام</button></a>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex d-lg-none pt-3">
+                                <div class="burger-menu-icon">
+                                    <i class="bi bi-justify" id="burger-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="header-bottom_bar-Index d-lg-block mt-lg-0 mt-4" id="header-bottom_bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 p-0 bottom_bar">
+                            <ul class=" p-0 pe-3">
+                                <li><a href="./index.html">صفحه اصلی</a></li>
+                                <li>
+                                    <a href="#">شتاب دهنده</a>
+                                    <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                    <ul  class="sub-menu_layer">
+                                        <li><a href="#">زیر سطح ۱</a></li>
+                                        <li><a href="#">زیر سطح ۱</a></li>
+                                        <li><a href="#">زیر سطح ۱</a></li>
+                                        <li><a href="#">زیر سطح ۱</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">پردیس</a>
+                                </li>
+                                <li>
+                                    <a href="#">تخته وب</a>
+                                    <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                    <ul class="sub-menu_layer">
+                                        <li><a href="#">زیر سطح ۱</a></li>
+                                        <li><a href="#">زیر سطح ۱</a></li>
+                                        <li><a href="#">زیر سطح ۱</a></li>
+                                        <li><a href="#">زیر سطح ۱</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">TLMS</a>
+                                </li>
+                                <li>
+                                    <a href="./About__Us.html">درباره ما</a>
+                                </li>
+                                <li>
+                                    <a href="./Contact__Us.html">تماس با ما</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="header-menu_Scroll pb-1 pt-2 d-none" id="header-menu_Scroll">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="menu_scroll d-flex p-0 ">
+                            <div class="col-lg-2 col-3 ms-3">
+                                <a href="./index.html"><img src="./assets/img/logo.png" class="main-logo"
+                                        alt="تحلیلگران"></a>
+                            </div>
+                            <div class="col-7 me-5 d-lg-block d-none pt-4">
+                                <div class="col-12 p-0">
+                                    <ul class=" p-0 pe-0 m-0">
+                                        <li><a href="./index.html">صفحه اصلی</a></li>
+                                        <li>
+                                            <a href="#">شتاب دهنده</a>
+                                            <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                            <ul  class="sub-menu_layer">
+                                                <li><a href="#">زیر سطح ۱</a></li>
+                                                <li><a href="#">زیر سطح ۱</a></li>
+                                                <li><a href="#">زیر سطح ۱</a></li>
+                                                <li><a href="#">زیر سطح ۱</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">پردیس</a></li>
+                                        <li>
+                                            <a href="#">تخته وب</a>
+                                            <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                            <ul  class="sub-menu_layer">
+                                                <li><a href="#">زیر سطح ۱</a></li>
+                                                <li><a href="#">زیر سطح ۱</a></li>
+                                                <li><a href="#">زیر سطح ۱</a></li>
+                                                <li><a href="#">زیر سطح ۱</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">TLMS</a></li>
+                                        <li><a href="./About__Us.html">درباره ما</a></li>
+                                        <li><a href="./Contact__Us.html">تماس با ما</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-3 d-none d-lg-flex justify-content-start align-items-center">
+                                <div class="header-icon-holder ms-4 position-relative">
+                                    <i class="bi bi-search" id="search_icon-scroll"></i>
+                                    <div class="search_box position-absolute " id="search_box-scroll">
+                                        <form class="search_box-form">
+                                            <input type="text" placeholder="جستجو" class="p-1">
+                                            <button type="button" class="p-1 px-2"><i class="bi bi-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9 d-flex d-lg-none justify-content-end ps-5 pt-3">
+                                <div class="burger-menu-icon">
+                                    <i class="bi bi-justify" id="burger-icon-Scroll"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="burger-menu-container" id="burger-menu-container">
+                <div class="burger-close">
+                    <i class="bi bi-x" id="burger-close-icon"></i>
+                </div>
+                <div class="burger-search">
+                    <input type="text" placeholder="ورود واژه کلیدی...">
+                    <a href="#"><button><i class="bi bi-search"></i></button></a>
+                </div>
+                <div class="burger-navs">
+                    <ul class="burger-main-navs">
+                        <li class="burger-home">
+                            <a href="./index.html">خانه</a>
+                        </li>
+                        <li class="burger-weblog">
+                            <span class="main-link">
+                                <a href="#">وبلاگ</a>
+                            </span>
+                        </li>
+                        <li class="burger-shetabdahandeh" id="burger-shetabdahandeh">
+                            <span class="main-link">
+                                <a href="#">شتاب دهنده</a>
+                                <i class="bi bi-plus"></i>
+                            </span>
+                            <ul class="Burger_sub-menu_layer" id="Shetab_sub">
+                                <li><a href="#">زیر سطح </a></li>
+                                <li><a href="#">زیر سطح </a></li>
+                                <li><a href="#">زیر سطح </a></li>
+                                <li><a href="#">زیر سطح </a></li>
+                            </ul>
+                        </li>
+                        <li class="burger-pardis">
+                            <span class="main-link">
+                                <a href="#">پردیس</a>
+                            </span>
+                        </li>
+                        <li class="burger-Takhteh_web" id="burger-Takhteh_web">
+                            <span class="main-link">
+                                <a href="#">تخته وب</a>
+                                <i class="bi bi-plus"></i>
+                            </span>
+                            <ul class="Burger_sub-menu_layer" id="Takhteh_sub">
+                                <li><a href="#">زیر سطح </a></li>
+                                <li><a href="#">زیر سطح </a></li>
+                                <li><a href="#">زیر سطح </a></li>
+                                <li><a href="#">زیر سطح </a></li>
+                            </ul>
+                        </li>
+                        <li class="burger-TLMS">
+                            <span class="main-link">
+                                <a href="#">آموزش مجازی (TLMS)</a>
+                            </span>
+                        </li>
+                        <li class="burger-contact-us">
+                            <a href="./About__Us.html">درباره ما</a>
+                        </li>
+                        <li class="burger-contact-us">
+                            <a href="./Contact__Us.html">تماس با ما</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-------------- Main-------------->
+        <main class="mt-5">
+            <section class="header-slider-Blog p-0" id="header-slider" style="background-image: url('./assets/img/slider1-2.jpg');">
+                <div class="container-fluid">
+                    <div class="row">
+                        <section class="header-bg-overlay-Blog">
+                            <div class="container-fluid"><div class="row"></div>
+                            </div>
+                        </section>
+                        <section class="Head-Title-Blog">
+                            <div class="container">
+                                <div class="row">
+                                    <p>بازاریابی دیجیتال چیست؟</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="Main_Body d-flex">
+                <div class="container-fluid container-md">
+                    <div class="row">
+                        <main class="col-md-8 col-12">
+                            <section class="blog-header col-12">
+                                <div class="blog-main-img"><img src="./assets/img/blog__2-main-img.jpg"
+                                        alt="بروشور چیست و چه مزایایی دارد؟" class="w-100"></div>
+                                <div class="blog-main-detail mt-5">
+                                    <article class=" blog-detail-title">
+                                        <p>بازاریابی دیجیتال چیست؟</p>
+                                    </article>
+                                    <article class="blog-detail-content mt-3">
+                                        <ul class="p-0">
+                                            <li><i class="bi bi-person ms-2"></i><a href="#">admin</a></i></li>
+                                            <li><i class="bi bi-calendar4 ms-2"></i><a href="#">آذر ۲۷, ۱۳۹۹</a></li>
+                                            <li><i class="bi bi-chat-left ms-2"></i><a href="#">بدون نظر</a></li>
+                                            <li><i class="bi bi-folder2-open ms-2"></i><a href="#">تبلیغات</a></li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </section>
+                            <section class="blog-content col-12 mt-5">
+                                <article style="line-height: 35px;">
+                                    در مقابل، بازاریابی دیجیتال در دنیای دیجیتال انجام می شود. بازاریابی دیجیتال هر نوع
+                                    بازاریابی است که شرکت در دنیای آنلاین انجام می دهد. از جمله این روش ها می توان به
+                                    تبلیغات پولی رسانه های اجتماعی، بازاریابی ایمیلی، تبلیغات PPC و غیره اشاره کرد.
+                                    دیجیتال مارکتینگ، به خاطر تغییرات فرهنگی، فنی و اجتماعی که در اطراف ما رخ داده محبوب
+                                    شده است. توییت های تبلیغی، نظرات اینفلوئنسرها، ویدئوها همگی نمونه هایی از بازاریابی
+                                    دیجیتال هستند. <br>
+                                    حتی اگر در گوگل عبارت تیک تاک چیست را جستجو کنید می توانید به نتایجی برسید که شاهدی
+                                    بر موثر بودن بازاریابی دیجیتال است. از آنجایی که دنیای اطراف ما بیشتر از قبل به سمت
+                                    دیجیتالی شدن پیش می رود روشی که برای بازاریابی انتخاب می کنیم هم باید دستخوش تغییر
+                                    شود. <br>
+                                    بازاریابی دیجیتال گاهی از اوقات نه تنها می تواند مقرون به صرفه تر از بازاریابی سنتی
+                                    باشد بلکه روش مستقیم تری برای ارتباط با مخاطبان هدف است. <br>
+                                    بازاریابی دیجیتال برای کسب وکارهای امروزی ضروری است. مشتریان می توانند در دنیای
+                                    آنلاین راحت تر تحقیق کنند و بهتر خرید نمایند. <br>
+                                    شما با وجود این اطلاعات چه مسیری را برای بازاریابی در شرکت خود انتخاب می کنید؟
+                                </article>
+                                <div class="text-center mt-5"><img src="./assets/img/blog__2-img.jpg" class="w-100 rounded"
+                                        alt="بازاریابی سنتی و مدرن"></div>
+                            </section>
+                            <section class="blog-content col-12 mt-5">
+                                <div class="content-head">
+                                    <h3>بازاریابی سنتی در برابر بازاریابی دیجیتال : </h3>
+                                </div>
+                                <div class="content-body mt-4">
+                                    <article>بازاریابی سنتی رویکردی است که در آن بازاریابان مخاطبان خود را شناسایی می
+                                        کنند و تبلیغات را جایی قرار می دهند که مخاطب بتواند آن را ببیند، بشنود، با آن در
+                                        دنیای آفلاین تعامل داشته باشد( همچون تلویزیون، رادیو و بیلبورد). در مقابل
+                                        بازاریابی دیجیتال در دنیای آنلاین انجام می شود و از تبلیغات پولی یا طبیعی در
+                                        رسانه های اجتماعی و موتورهای جستجو بهره می برد. از جمله این روش ها می توان به
+                                        بازاریابی ایمیلی، بازاریابی اینفلوئنسرها، بازاریابی ویدئویی و غیره اشاره کرد.
+
+                                        باید در نظر داشت که در بازاریابی سنتی نقاط ضعفی وجوددارد. اولا، کسب وکارها تعامل
+                                        کمی با مشتریانی دارند که محصولاتشان را در زمان واقعی خریداری می کنند. برخی از
+                                        بازاریابان هم بر این باورند که بازاریابی سنتی قابل اعتماد نیست. شما نمی توانید
+                                        بعد از چاپ شدن تبلیغ، آن را ویرایش کنید. پس اگر تخفیف نادرستی روی عناصر چاپی تان
+                                        قرار دادید یا حرف نادرستی از رادیو زدید نمی توانید آن را تغییر دهید.
+                                    </article>
+                                    <article class="mt-5">
+                                        بازاریابی سنتی می تواند هزینه بر هم باشد. به عنوان مثال برای اجرای یک تبلیغ چاپی
+                                        هزینه ای حدود ۲ هزار الی ۱۶۰ هزار دلار نیاز است. علاوه بر این، به کمک این سرمایه
+                                        گذاری ها نمی توانید بفهمید به چه کسی دست پیدا کردید و سنجش فعالیت هایتان بسیار
+                                        دشوار است. با این وجود بازاریابی سنتی هنوز هم یک روش مهم برای بازاریابی برخی از
+                                        کسب وکارهاست. در مقابل بازاریابی دیجیتال هر روز رشد می کند و بر اهمیت آن برای
+                                        درآمدزایی افزوده می شود.
+
+                                        واقعیت این است که بر اساس گزارش کسب وکارها، نیمی از درآمدشان تحت تاثیر بازاریابی
+                                        دیجیتال و فروش در دنیای رسانه های اجتماعی بوده است.
+                                    </article>
+                                    <article class="mt-5">
+                                        اخیرا ۵۰ درصد از بازاریابان بیان کرده اند که بازاریابی دیجیتال را به بازاریابی
+                                        سنتی ترجیح می دهند چون تعاملات این نوع بازاریابی با مشتریان بیشتر است. کسب
+                                        وکارها می توانند کنترل کاملی بر روی رشد مخاطب داشته باشند و نتایج لحظه ای را در
+                                        کمپین هایشان ملاحظه کنند. به کمک بازاریابی درونگرا(Inbound Marketing) ، مشتریان
+                                        کسب وکار شما را دوست خواهند داشت و راحت تر آن را پیدا خواهند کرد.
+                                    </article>
+                                    <article>
+                                        با وجود همه این مزایا نمی توان از معایب بازاریابی دیجیتال چشم پوشید. بازاریابی
+                                        دیجیتال به فناوری و گاهی ظهور فناوری های جدید وابسته است. زمانی که شبکه اجتماعی
+                                        از دسترس خارج می شود، بازاریاب هیچ کاری از دستش بر نمی آید و باید منتظر بماند.
+                                        یکی دیگر از مشکلاتی که رسانه های اجتماعی با آن روبرو هستند امنیت است.
+
+                                        از زمانی که مشخص شد بیش از ۸۷ میلیون اطلاعات پروفایل در فیس بوک به بیرون نشت
+                                        کرده است سایر پلتفرم ها سنجش های سختی را برای امن تر کردن اطلاعات کاربران اتخاذ
+                                        کردند. اما کسب وکارها باید قانونی بودن بازاریابی شان را به خاطر داشته باشند.
+                                        اگرچه به روزرسانی موارد کاربردی که در رسانه های اجتماعی استفاده می شود شما را به
+                                        یادگیری موارد جدید وادار می کند. اما این موضوع زمانبر خواهد بود.
+                                    </article>
+                                    <article>
+                                        می توان بازاریابی سنتی و دیجیتال را کنار هم به کار برد؟
+                                    </article>
+                                    <article>
+                                        اگر بخواهیم پاسخ کوتاهی به این سوال بدهیم باید بگوییم بله. سال هاست که افراد
+                                        درباره بازاریابی سنتی و دیجیتال حرف می زنند و بحث درمورد آن ادامه خواهد داشت.
+                                    </article>
+                                    <article class="mt-1">
+                                        شما می توانید در برخی از موارد هم از بازاریابی سنتی و هم از بازاریابی دیجیتال
+                                        استفاده کنید.
+                                    </article>
+                                    <article class="mt-4">
+                                        به عنوان مثال شما نمی توانید در برخی از شرایط تبلیغات چاپی را در دنیای دیجیتال
+                                        اجرا کنید اما می توانید افراد را در رسانه های اجتماعی دنبال کنید و از آن ها
+                                        بخواهید در خبرنامه تان مشترک شوند. در این شرایط افراد کهنسالی که فلایر و کوپن
+                                        های پستی را ترجیح می دهند می توانند از آن استفاده کنند و افرادی که رسانه های
+                                        اجتماعی را دوست دارند می توانند همین اطلاعات را در شبکه های اجتماعی دریافت کنند.
+                                    </article>
+                                    <article class="mt-4">
+                                        آیا تابحال برای رشد بازاریابی دیجیتال از بازاریابی سنتی استفاده کرده اید؟ به
+                                        عنوان مثال بخشی از روزنامه محلی تان را می توانید به معرفی سایت یا پروفایل تان در
+                                        رسانه های اجتماعی اختصاص دهید. در چنین شرایطی مخاطبان آنلاینی که روزنامه محلی را
+                                        بررسی می کنند به دنیای آنلاین می روند و تلاش می کنند اطلاعات بیشتری درباره تان
+                                        به دست آورند. دیگر به فکر این نباشید که چگونه می توانید از بین بازاریابی سنتی و
+                                        دیجیتال یکی را انتخاب کنید. در عوض، سعی کنید از هر دو تاکتیک برای بازاریابی موثر
+                                        بهره ببرید.
+                                    </article>
+                                </div>
+                            </section>
+                            <section class="share_blog mt-5 pb-4 d-flex align-items-center">
+                                <div class="share_context">
+                                    <p>اشتراک گذاری این مقاله</p>
+                                </div>
+                                <div class="share_seprator"></div>
+                                <div class="share_links d-flex flex-wrap">
+                                    <nav hidden><a href="#"><i class="bi bi-linkedin"></i></a></nav>
+                                    <nav hidden><a href="#"><i class="bi bi-pinterest"></i></a></nav>
+                                    <nav><a href="https://twitter.com/intent/tweet"><i class="bi bi-twitter"></i></a></nav>
+                                    <nav hidden><a href="#"><i class="bi bi-google"></i></a></nav>
+                                    <nav><a href="#" onclick="share()"><i class="bi bi-facebook"></i></a></nav>
+                                    <nav hidden><a href="#"><i class="bi bi-envelope"></i></a></nav>
+                                    <nav><a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share"><i class="bi bi-whatsapp"></i></a></nav>
+                                    <nav><a href="https://telegram.me/share/url?url= URL & text =TEXT"><i class="bi bi-telegram"></i></a></nav>
+                                </div>
+                            </section>
+                            <section
+                                class="post-navigation mt-4 d-flex justify-content-between align-items-center flex-wrap">
+                                <a href="#" class="navs prev-nav d-flex">
+                                    <i class="bi bi-chevron-right ms-3"></i>
+                                    <span class="d-block" id="nav-prev">
+                                        <p>پست قبلی</p>
+                                        <p>بازاریابی دیجیتال چیست؟</p>
+                                    </span>
+                                </a>
+                                <a href="#" class="navs next-nav d-flex">
+                                    <span class="d-block" id="nav-next" style="order: 1;">
+                                        <p>پست بعدی</p>
+                                        <p>لوگوی شما برندتان نیست!</p>
+                                    </span>
+                                    <i class="bi bi-chevron-left me-3" id="nav-next-icon" style="order: 2;"></i>
+                                </a>
+                            </section>
+                            <div class="col-12 mt-5 mb-4 pb-3 border-bottom">
+                                <h3>نظرات</h3>
+                            </div>
+                            <div class="Users_Feeds col-12 mt-4 d-flex justify-content-sm-between justify-content-center flex-wrap flex-lg-nowrap">
+                                <div class="User_Img col-lg-1 col-12"><img src="https://picsum.photos/800/700" alt="کاربر" class="rounded-circle"></div>
+                                <div class="User_Feed_Content col-lg-10 col-12 px-4 py-2 rounded-3 mt-lg-0 mt-4">
+                                    <div class="User_name d-block">
+                                        <div class="w-100 col-12 name_text"><p class="m-0">حمیدی</p></div>
+                                        <div class="w-100 col-12 Feed_Date"><p class="m-0">25 مهر ، 1399</p></div>
+                                    </div>
+                                    <div class="User_Feed col-12 mt-3">
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                    </div>
+                                    <div class="Feed_Likes col-12 mt-2 d-flex justify-content-end">
+                                        <section class="d-flex ms-4"><p class="ms-1">5</p><i class="bi bi-hand-thumbs-down dislike"></i></section>
+                                        <section class="d-flex"><p class="ms-1">12</p><i class="bi bi-hand-thumbs-up like"></i></section>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Users_Feeds col-12 mt-4 d-flex justify-content-sm-between justify-content-center flex-lg-nowrap flex-wrap">
+                                <div class="User_Img col-lg-1 col-12"><img src="https://picsum.photos/800/800" alt="کاربر" class="rounded-circle"></div>
+                                <div class="User_Feed_Content col-lg-10 col-12 px-4 py-2 rounded-3 mt-lg-0 mt-4">
+                                    <div class="User_name d-block">
+                                        <div class="w-100 col-12 name_text"><p class="m-0">جلال آل احمد شمیرانی</p></div>
+                                        <div class="w-100 col-12 Feed_Date"><p class="m-0">25 مهر ، 1399</p></div>
+                                    </div>
+                                    <div class="User_Feed col-12 mt-3">
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                    </div>
+                                    <div class="Feed_Likes col-12 mt-2 d-flex justify-content-end">
+                                        <section class="d-flex ms-4"><p class="ms-1">2</p><i class="bi bi-hand-thumbs-down dislike"></i></section>
+                                        <section class="d-flex"><p class="ms-1">26</p><i class="bi bi-hand-thumbs-up like"></i></section>
+                                    </div>
+                                </div>
+                            </div>
+                            <section class="feed_back mt-5">
+                                <div class="feed_back-title">
+                                    <h5>ارسال نظر</h5>
+                                </div>
+                                <div class="feed_back-note mt-4">
+                                    <p>آدرس ایمیل شما منتشر نخواهد شد.</p>
+                                </div>
+                                <div class="feed_back-box mt-4"><textarea class="w-100" rows="10"
+                                        placeholder="نظر شما"></textarea></div>
+                                <div class="feed_back-user_detail d-flex flex-lg-nowrap flex-wrap mt-4">
+                                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 ps-sm-3 ps-0 user_name"><input
+                                            class="w-100" type="text" placeholder="نام خود را وارد کنید"></div>
+                                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-sm-0 mt-3 ps-lg-3 ps-0 user_email">
+                                        <input class="w-100" type="email" placeholder="ایمیل خود را وارد کنید"></div>
+                                    <div class="col-lg-4  col-12 mt-lg-0 mt-3 submit_button"><button class="w-100"
+                                            type="submit">ارسال نظر</button></div>
+                                </div>
+                            </section>
+                        </main>
+                        <aside class="col-md-4 col-12 mt-5 mt-md-0">
+                            <section class="search">
+                                <div class="search_title">
+                                    <h6>جستجو در سایت</h6>
+                                </div>
+                                <div class="search-box d-flex mt-4 position-relative">
+                                    <input type="text" class="w-100 p-1" placeholder="جستجو">
+                                    <button class="position-absolute px-3"><i class="bi bi-search"></i></button>
+                                </div>
+                            </section>
+                            <section class="category mt-5">
+                                <div class="category-title">
+                                    <h6>دسته بندی</h6>
+                                </div>
+                                <div class="category-content mt-4">
+                                    <a href="#"><span class="link-context">برندینگ</span><span
+                                            class="link-counts">۱</span></a>
+                                    <a href="#"><span class="link-context">تبلیغات</span><span
+                                            class="link-counts">۴</span></a>
+                                    <a href="#"><span class="link-context">دسته بندی نشده</span><span
+                                            class="link-counts">۲</span></a>
+                                    <a href="#"><span class="link-context">گالری</span><span
+                                            class="link-counts">۶</span></a>
+                                    <a href="#"><span class="link-context">گرافیک</span><span
+                                            class="link-counts">۳</span></a>
+                                </div>
+                            </section>
+                            <section class="last-entries mt-5">
+                                <div class="last_entries-title">
+                                    <h6>آخرین مقالات</h6>
+                                </div>
+                                <div class="last_entries-content mt-4">
+                                    <div class="entry">
+                                        <div class="entry_img col-3"><a href="#"><img class="w-100"
+                                                    src="./assets/img/Last-Entries.jpeg" alt="آخرین مقالات"></a></div>
+                                        <div class="entry_detail col-9"><a href="#">نمایشگاه معماری</a>
+                                            <p><i class="bi bi-calendar4"></i> ۱۰ دی ۱۳۹۹</p>
+                                        </div>
+                                    </div>
+                                    <div class="entry">
+                                        <div class="entry_img col-3"><a href="#"><img class="w-100"
+                                                    src="./assets/img/Last-Entries__1.jpeg" alt="آخرین مقالات"></a>
+                                        </div>
+                                        <div class="entry_detail col-9"><a href="#">دومین سالانه دانشجویی دال</a>
+                                            <p><i class="bi bi-calendar4"></i> ۱۰ دی ۱۳۹۹</p>
+                                        </div>
+                                    </div>
+                                    <div class="entry">
+                                        <div class="entry_img col-3"><a href="#"><img class="w-100"
+                                                    src="./assets/img/Last-Entries__2.jpeg" alt="نمایشگاه معماری"></a>
+                                        </div>
+                                        <div class="entry_detail col-9"><a href="#">همایش ملی کاریکاتور</a>
+                                            <p><i class="bi bi-calendar4"></i> ۱۰ دی ۱۳۹۹</p>
+                                        </div>
+                                    </div>
+                                    <div class="entry">
+                                        <div class="entry_img col-3"><a href="#"><img class="w-100"
+                                                    src="./assets/img/Last-Entries__3.jpeg" alt="نمایشگاه معماری"></a>
+                                        </div>
+                                        <div class="entry_detail col-9"><a href="#">هفته طراحی گرافیک</a>
+                                            <p><i class="bi bi-calendar4"></i> ۱۰ دی ۱۳۹۹</p>
+                                        </div>
+                                    </div>
+                                    <div class="entry">
+                                        <div class="entry_img col-3"><a href="#"><img class="w-100"
+                                                    src="./assets/img/Last-Entries__4.jpeg" alt="نمایشگاه معماری"></a>
+                                        </div>
+                                        <div class="entry_detail col-9"><a href="#">همایش ملی گرافیک</a>
+                                            <p><i class="bi bi-calendar4"></i> ۱۰ دی ۱۳۹۹</p>
+                                        </div>
+                                    </div>
+                                    <div class="entry">
+                                        <div class="entry_img col-3"><a href="#"><img class="w-100"
+                                                    src="./assets/img/Last-Entries__5.jpeg" alt="نمایشگاه معماری"></a>
+                                        </div>
+                                        <div class="entry_detail col-9"><a href="#">همایش ملی مبانی نظری هنرهای
+                                                تجسمی</a>
+                                            <p><i class="bi bi-calendar4"></i> ۱۰ دی ۱۳۹۹</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="aside-Tags mt-5">
+                                <div class="Tags_title">
+                                    <h6>برچسب ها</h6>
+                                </div>
+                                <div class="Tags-content d-flex flex-wrap mt-3">
+                                    <a href="#">بازاریابی</a>
+                                    <a href="#">برند</a>
+                                    <a href="#">تبلیغات</a>
+                                    <a href="#">طراحی</a>
+                                    <a href="#">لوگو</a>
+                                    <a href="#">چاپ</a>
+                                    <a href="#">گرافیک</a>
+                                </div>
+                            </section>
+                            <section class="last-projects mt-5">
+                                <div class="projects-title">
+                                    <h6>آخرین پروژه ها</h6>
+                                </div>
+                                <div class="projects-content mt-5 d-flex flex-wrap">
+                                    <div class="project col-3"><a href="#"><img class="w-100"
+                                                src="./assets/img/Last-Entries__3.jpeg" alt="آخرین پروژه"></a></div>
+                                    <div class="project col-3"><a href="#"><img class="w-100"
+                                                src="./assets/img/Last-Entries__2.jpeg" alt="آخرین پروژه"></a></div>
+                                    <div class="project col-3"><a href="#"><img class="w-100"
+                                                src="./assets/img/Last-Entries.jpeg" alt="آخرین پروژه"></a></div>
+                                    <div class="project col-3"><a href="#"><img class="w-100"
+                                                src="./assets/img/Last-Entries__1.jpeg" alt="آخرین پروژه"></a></div>
+                                    <div class="project col-3"><a href="#"><img class="w-100"
+                                                src="./assets/img/Last-Entries__4.jpeg" alt="آخرین پروژه"></a></div>
+                                    <div class="project col-3"><a href="#"><img class="w-100"
+                                                src="./assets/img/Last-Entries__5.jpeg" alt="آخرین پروژه"></a></div>
+                                </div>
+                            </section>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-------------- Footer-------------->
+        <footer style="background-image: url('./assets/img/footer_bg.jpg');">
+            <section class="Footer" style="background-color: #040f1dd0;background-attachment: fixed;">
+                <div class="container">
+                    <div class="row d-flex">
+                        <div class="col-lg-5 col-md-6 col-12 mt-5 mt-md-0">
+                            <div class="d-flex footer-title-seprators">
+                                <p>وبینار تحلیلگران</p><span></span>
+                            </div>
+                            <div class="d-flex">
+                                <div><a href="./index.html">
+                                        <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js">
+                                        </script>
+                                        <lord-icon src="https://cdn.lordicon.com/smeqxwcv.json" trigger="loop"
+                                            delay="3000" colors="primary:#2ba9dc,secondary:#e95d31" stroke="25"
+                                            style="width:130px;height:100px;transform: translateY(-20px);">
+                                        </lord-icon>
+                                    </a></div>
+                                <div>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 d-none d-lg-block"></div>
+                        <div class="col-lg-5 col-md-6 col-12 mt-5 mt-md-0">
+                            <div class="d-flex footer-title-seprators">
+                                <p>خبرنامه</p><span></span>
+                            </div>
+                            <div class="GetNews">
+                                <div>
+                                    <p>اطلاع از آخرین اخبار</p>
+                                </div>
+                                <div class="d-flex position-relative">
+                                    <input class="rounded-end rounded-start" type="email">
+                                    <button id="getnews_btn" class="rounded-start" type="submit">ارسال</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex flex-wrap flex-lg-nowrap">
+                        <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                            <div class="d-flex footer-title-seprators">
+                                <p>برچسب ها</p><span></span>
+                            </div>
+                            <div class="d-flex flex-wrap Tags">
+                                <p href="#">تحلیلگران</p>
+                                <p>نرم افزار</p>
+                                <p>شبکه</p>
+                                <p>وبینار</p>
+                                <p>دانش بنیان</p>
+                                <p>برنامه نویسی</p>
+                                <p>هاست</p>
+                                <p>آموزش مجازی</p>
+                                <p>پارک علم و فناوری</p>
+                                <p>سرور مجازی</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                            <div class="d-flex footer-title-seprators">
+                                <p>دسترسی</p><span></span>
+                            </div>
+                            <div class="accessibility">
+                                <a href="./index.html"> <span class="link-arrow"></span> صفحه اصلی</a>
+                                <a href="./News_List.html"> <span class="link-arrow"></span> اخبار</a>
+                                <a href="./blog-list.html"> <span class="link-arrow"></span> وبلاگ</a>
+                                <a href="./Job_Opportunity-list.html"> <span class="link-arrow"></span> فرصت همکاری</a>
+                                <a href="./About__Us.html"> <span class="link-arrow"></span> درباره ما</a>
+                                <a href="./Contact__Us.html"> <span class="link-arrow"></span> تماس ما</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                            <div class="d-flex footer-title-seprators">
+                                <p>نماد ها</p><span></span>
+                            </div>
+                            <div class="samples d-flex justify-content-around flex-wrap">
+                                <a href="#"><img src="./assets/img/Enamad.png" alt="نماد اعتماد الکترونیکی"></a>
+                                <a href="#"><img src="./assets/img/samandehi.png" alt="نشان ثبت اعتماد الکترونیکی"></a>
+                                <a href="#"><img src="./assets/img/logo (1).png"
+                                        alt="عضو اتحادیه کسب و کار های مجازی"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <section class="copyrights">
+                        <p> © تمام حقوق برای شرکت تحلیلگران محفوظ است.</p>
+                    </section>
+                </div>
+            </section>
+        </footer>
+    <!-------------- Scripts-------------->
+    <script src="./assets/js/jQuery/jQuery.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.js"></script>
+    <script src="./assets/js/OwlCarousel/owl.carousel.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+</body>
+
+</html>

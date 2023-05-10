@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>تحلیلگران</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2196F3">
+    <link rel="stylesheet" href="./css/Styles-main.min.css">
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./css/OwlCarousel/owl.carousel.css">
+    <link rel="stylesheet" href="./css/OwlCarousel/owl.theme.default.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!--font styles-->
+    <style>
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: bold;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Bold.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Bold.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Bold.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Bold.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 500;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Medium.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Medium.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Medium.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Medium.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 300;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\)_Light.eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\)_Light.woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\)_Light.woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\)_Light.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: normal;
+            src: url("./assets/fonts/IranSans_WEB-eot/IRANSansWeb\(FaNum\).eot");
+            src: url("./assets/fonts/IranSans_WEB-woff2/IRANSansWeb\(FaNum\).woff2") format("woff2"), url("./assets/fonts/IranSans_WEB-woff/IRANSansWeb\(FaNum\).woff") format("woff"), url("./assets/fonts/IranSans_WEB-ttf/IRANSansWeb\(FaNum\).ttf") format("truetype");
+        }
+
+        body {
+            font-family: IRANSans, Fallback, sans-serif !important;
+            padding: 0 0;
+            margin: 0 0;
+            overflow-x: hidden !important;
+            direction: rtl !important;
+        }
+    </style>
+    <!--font styles-->
+</head>
+
+<body>
+
+    <!-------------- PreLoader-------------->
+    <div class="preload" id="preloader">
+        <lord-icon src="https://cdn.lordicon.com/yqbqexfk.json" trigger="loop" delay="300"
+            colors="primary:#2ba9dc,secondary:#e95d31" stroke="69" style="width:250px;height:250px">
+        </lord-icon>
+    </div>
+    <!-------------- PreLoader-------------->
+
+
+
+    <!-------------- Header-------------->
+    <header class="position-relative">
+        <section class="header-top_bar-Index" id="header-top_bar">
+            <div class="container-fluid container-lg">
+                <div class="row">
+                    <div class="col-12 pt-2 pb-2 d-flex top_bar">
+                        <div class="col-10 main-logo-container">
+                            <a href="./index.html"><img src="./assets/img/logo.png" class="main-logo"
+                                    alt="تحلیلگران"></a>
+                        </div>
+                        <div class="col-2 d-none d-lg-flex justify-content-around align-items-center">
+                            <div class="header-icon-holder position-relative">
+                                <i class="bi bi-search" id="search_icon"></i>
+                                <div class="search_box position-absolute " id="search_box">
+                                    <form class="search_box-form">
+                                        <input type="text" placeholder="جستجو" class="p-1">
+                                        <button type="button" class="p-1 px-2"><i class="bi bi-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="header-icon-holder position-relative d-none">
+                                <i class="bi bi-cart" id="cart-icon"></i>
+                                <div class="header-cart position-absolute" id="header-cart">
+                                    <div
+                                        class="header-cart_item text-center d-flex justify-content-center align-items-center">
+                                        <p>سبد خرید شما خالی است</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-icon-holder position-relative d-none">
+                                <i class="bi bi-person" id="login-icon" style="font-size: 20px;"></i>
+                                <div class="header-login position-absolute" id="header-login">
+                                    <article>
+                                        <p class="p-0 m-0 mb-2">ایمیل</p>
+                                        <form>
+                                            <input type="email" class="w-100 p-1">
+                                        </form>
+                                    </article>
+                                    <article class="mt-3">
+                                        <p class="p-0 m-0 mb-2">گذرواژه</p>
+                                        <form>
+                                            <input type="password" class="w-100 p-1">
+                                        </form>
+                                    </article>
+                                    <article class="w-100 d-flex mt-4">
+                                        <div class="ms-2 pt-1"><input type="checkbox"></div>
+                                        <div>
+                                            <p>مرا به خاطر بسپار</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <a href="#"><button type="button" class="w-100 p-2">ورود</button></a>
+                                        <a href="#"><button type="button" class="w-100 p-2 mt-3">ثبت نام</button></a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 d-flex d-lg-none pt-3">
+                            <div class="burger-menu-icon">
+                                <i class="bi bi-justify" id="burger-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="header-bottom_bar-Index d-lg-block" id="header-bottom_bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 p-0 bottom_bar">
+                        <ul class=" p-0 pe-3">
+                            <li><a href="./index.html">صفحه اصلی</a></li>
+                            <li>
+                                <a href="#">شتاب دهنده</a>
+                                <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                <ul class="sub-menu_layer">
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">پردیس</a>
+                            </li>
+                            <li>
+                                <a href="#">تخته وب</a>
+                                <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                <ul class="sub-menu_layer">
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                    <li><a href="#">زیر سطح ۱</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">TLMS</a>
+                            </li>
+                            <li>
+                                <a href="./About__Us.html">درباره ما</a>
+                            </li>
+                            <li>
+                                <a href="./Contact__Us.html">تماس با ما</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="header-menu_Scroll pb-1 pt-2 d-none" id="header-menu_Scroll">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="menu_scroll d-flex p-0 ">
+                        <div class="col-lg-2 col-3 ms-3">
+                            <a href="./index.html"><img src="./assets/img/logo.png" class="main-logo"
+                                    alt="تحلیلگران"></a>
+                        </div>
+                        <div class="col-7 me-5 d-lg-block d-none pt-4">
+                            <div class="col-12 p-0">
+                                <ul class=" p-0 pe-0 m-0">
+                                    <li><a href="./index.html">صفحه اصلی</a></li>
+                                    <li>
+                                        <a href="#">شتاب دهنده</a>
+                                        <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                        <ul class="sub-menu_layer">
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">پردیس</a></li>
+                                    <li>
+                                        <a href="#">تخته وب</a>
+                                        <i class="bi bi-chevron-down me-2 chevron_down"></i>
+                                        <ul class="sub-menu_layer">
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                            <li><a href="#">زیر سطح ۱</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">TLMS</a></li>
+                                    <li><a href="./About__Us.html">درباره ما</a></li>
+                                    <li><a href="./Contact__Us.html">تماس با ما</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-3 d-none d-lg-flex justify-content-start align-items-center">
+                            <div class="header-icon-holder ms-4 position-relative">
+                                <i class="bi bi-search" id="search_icon-scroll"></i>
+                                <div class="search_box position-absolute " id="search_box-scroll">
+                                    <form class="search_box-form">
+                                        <input type="text" placeholder="جستجو" class="p-1">
+                                        <button type="button" class="p-1 px-2"><i class="bi bi-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9 d-flex d-lg-none justify-content-end ps-5 pt-3">
+                            <div class="burger-menu-icon">
+                                <i class="bi bi-justify" id="burger-icon-Scroll"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="burger-menu-container" id="burger-menu-container">
+            <div class="burger-close">
+                <i class="bi bi-x" id="burger-close-icon"></i>
+            </div>
+            <div class="burger-search">
+                <input type="text" placeholder="ورود واژه کلیدی...">
+                <a href="#"><button><i class="bi bi-search"></i></button></a>
+            </div>
+            <div class="burger-navs">
+                <ul class="burger-main-navs">
+                    <li class="burger-home">
+                        <a href="./index.html">خانه</a>
+                    </li>
+                    <li class="burger-weblog" hidden>
+                        <span class="main-link">
+                            <a href="#">وبلاگ</a>
+                        </span>
+                    </li>
+                    <li class="burger-shetabdahandeh" id="burger-shetabdahandeh">
+                        <span class="main-link">
+                            <a href="#">شتاب دهنده</a>
+                            <i class="bi bi-plus"></i>
+                        </span>
+                        <ul class="Burger_sub-menu_layer" id="Shetab_sub">
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                        </ul>
+                    </li>
+                    <li class="burger-pardis">
+                        <span class="main-link">
+                            <a href="#">پردیس</a>
+                        </span>
+                    </li>
+                    <li class="burger-Takhteh_web" id="burger-Takhteh_web">
+                        <span class="main-link">
+                            <a href="#">تخته وب</a>
+                            <i class="bi bi-plus"></i>
+                        </span>
+                        <ul class="Burger_sub-menu_layer" id="Takhteh_sub">
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                            <li><a href="#">زیر سطح </a></li>
+                        </ul>
+                    </li>
+                    <li class="burger-TLMS">
+                        <span class="main-link">
+                            <a href="#">آموزش مجازی (TLMS)</a>
+                        </span>
+                    </li>
+                    <li class="burger-contact-us">
+                        <a href="./About__Us.html">درباره ما</a>
+                    </li>
+                    <li class="burger-contact-us">
+                        <a href="./Contact__Us.html">تماس با ما</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-------------- Header-------------->
+
+
+    <!-------------- Main-------------->
+    <main>
+        <section class="header-slider-Index p-0" id="header-slider">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="owl-carousel owl-theme owl-rtl Header-owl p-0">
+                        <div class="HeaderOwl_item">
+                            <img src="./assets/img/slider1-1.jpg" alt="اسلاید اول">
+                            <div class="HeaderOwl-caption pt-5">
+                                <div>
+                                    <h2>یک برند خوب همراه با بازاریابی قوی شرکت را بیمه می کند !</h2>
+                                    <p class="mt-3 mb-3">در بازار های سنتی و قدیمی نام افراد به تنهایی اعتبار به حساب می
+                                        آمد ...</p>
+                                    <a href="#">بیشتر بدانید</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="HeaderOwl_item">
+                            <img src="./assets/img/slider1-2.jpg" alt="اسلاید دوم">
+                            <div class="HeaderOwl-caption pt-5">
+                                <div>
+                                    <h2>طراحی گرافیکی متناسب با نیاز کاربر</h2>
+                                    <p class="mt-3 mb-3">با توجه به میزان دقت بالای افراد قطعا یک طراحی سطحی کاربر را به
+                                        خود جذب نمی کند.</p>
+                                    <a href="#">بیشتر بدانید</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="HeaderOwl_item">
+                            <img src="./assets/img/slider1-3.jpg" alt="اسلاید سوم">
+                            <div class="HeaderOwl-caption pt-5">
+                                <div>
+                                    <h2>مجتمع چاپ و تبلیغات تحلیلگران</h2>
+                                    <p class="mt-3 mb-3">بزرگترین مجتمع چاد و تبلیغاتی شمالغرب کشور با بیش از ۱۰۰۰متر
+                                        فضای چاپ و تولید</p>
+                                    <a href="#">بیشتر بدانید</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel_underLayer rounded-3"></div>
+                </div>
+            </div>
+        </section>
+        <section class="Services mt-5 pb-5 mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="services_title col-12 pt-3 text-center">
+                        <h4 class="position-relative">خدمات شرکت</h4>
+                    </div>
+                    <div class="services_content col-12 pt-3 mt-5 d-flex flex-lg-nowrap flex-wrap">
+                        <div class="col-lg-3 col-sm-6 col-12 service_item">
+                            <div class="live_icons">
+                                    <lord-icon src="https://cdn.lordicon.com/qhgmphtg.json" trigger="loop" delay="1300"
+                                        colors="primary:#2ba9dc,secondary:#e95d31" style="width:100px;height:100px">
+                                    </lord-icon>
+                            </div>
+                            <div class="item_title mt-3">
+                                    <h5>تخته وب</h5>
+                            </div>
+                            <div class="item_description">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و لورم ایپسوم متن ساختگی
+                                    است</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12 service_item">
+                            <div class="live_icons">
+                                    <lord-icon src="https://cdn.lordicon.com/tfosrbcn.json" trigger="loop" delay="1300"
+                                        colors="primary:#2ba9dc,secondary:#e95d31"
+                                        style="width:100px;height:100px;transform: rotate(-90deg);">
+                                    </lord-icon>
+                            </div>
+                            <div class="item_title mt-3">
+                                    <h5>شتاب دهنده</h5>
+                            </div>
+                            <div class="item_description">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و لورم ایپسوم متن ساختگی
+                                    است</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12 service_item">
+                            <div class="live_icons">
+                                    <lord-icon src="https://cdn.lordicon.com/uukerzzv.json" trigger="loop" delay="1300"
+                                        colors="primary:#2ba9dc,secondary:#e95d31" style="width:100px;height:100px">
+                                    </lord-icon>
+                            </div>
+                            <div class="item_title mt-3">
+                                    <h5>پردیس</h5>
+                            </div>
+                            <div class="item_description">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و لورم ایپسوم متن ساختگی
+                                    است</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12 service_item">
+                            <div class="live_icons">
+                                    <lord-icon src="https://cdn.lordicon.com/isvvzjbf.json" trigger="loop" delay="1300"
+                                        colors="primary:#2ba9dc,secondary:#e95d31" style="width:100px;height:100px">
+                                    </lord-icon>
+                            </div>
+                            <div class="item_title mt-3">
+                                    <h5>آموزش مجازی(TLMS)</h5>
+                            </div>
+                            <div class="item_description">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و لورم ایپسوم متن ساختگی
+                                    است</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Work_Samples mt-5 pt-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <section class="Samples-holder pb-4">
+                        <div class="samples_title col-12 pt-5 text-center">
+                            <h4 class="position-relative">
+                                نمونه کار های تحلیلگران
+                            </h4>
+                        </div>
+                        <div class="Samples_content col-12 mt-5 pt-4 d-flex flex-md-nowrap flex-wrap">
+                            <div class="col-md-4 col-sm-6 col-12 d-block Column__1">
+                                <article class="Sample_item position-relative">
+                                    <a href="#">
+                                        <img src="./assets/img/Sample_1.jpg" alt="" class="h-100 w-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__1.png');"></span>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="sample_img_caption position-absolute p-2">
+                                            <a href="#">
+                                                <h5>چاپ کارت ویزیت</h5>
+                                            </a>
+                                            <div class="sample_img_OnHover pt-3">
+                                                <p>طراحی ست اداری شبکه چاپ اولین و تخصصی ترین مرکز ...</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="Sample_item position-relative">
+                                    <a href="#"><img src="./assets/img/Sample_4.jpg" alt="" class="h-100 w-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__2.png');"></span>
+                                        </div>
+                                    </a>
+                                    <div class="sample_img_caption position-absolute p-2">
+                                        <a href="#">
+                                            <h5>هدایای تبلیغاتی</h5>
+                                        </a>
+                                        <div class="sample_img_OnHover pt-3">
+                                            <p>طراحی ست اداری شبکه چاپ اولین و تخصصی ترین مرکز ...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="Sample_item position-relative">
+                                    <a href="#"><img src="./assets/img/Sample_7.jpg" alt="" class="h-100 w-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__3.png');"></span>
+                                        </div>
+                                    </a>
+                                    <div class="sample_img_caption position-absolute p-2">
+                                        <a href="#">
+                                            <h5>بیلبورد شرکت نوآوران</h5>
+                                        </a>
+                                        <div class="sample_img_OnHover pt-3">
+                                            <p>تبلیغ برای چه سازمانی صورت گرفت : لورم ایپسوم متن ساختگی ...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 d-block Column__2 me-md-2 me-0">
+                                <article class="Sample_item position-relative">
+                                    <a href="#"><img src="./assets/img/Sample_2.jpg" alt="" class="w-100 h-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__4.png');"></span>
+                                        </div>
+                                    </a>
+                                    <div class="sample_img_caption position-absolute p-2">
+                                        <a href="#">
+                                            <h5>ست اداری</h5>
+                                        </a>
+                                        <div class="sample_img_OnHover pt-3">
+                                            <p>طراحی ست اداری شبکه چاپ اولین و تخصصی ترین مرکز ...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="Sample_item position-relative">
+                                    <a href="#"><img src="./assets/img/Sample_5.jpg" alt="" class="w-100 h-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__5.png');"></span>
+                                        </div>
+                                    </a>
+                                    <div class="sample_img_caption position-absolute p-2">
+                                        <a href="#">
+                                            <h5>ست اداری شرکت آرمان</h5>
+                                        </a>
+                                        <div class="sample_img_OnHover pt-3">
+                                            <p>تبلیغ برای چه سازمانی صورت گرفت : لورم ایپسوم متن ساختگی ...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="Sample_item position-relative">
+                                    <a href="#"><img src="./assets/img/Sample_8.jpg" alt="" class="w-100 h-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__6.png');"></span>
+                                        </div>
+                                    </a>
+                                    <div class="sample_img_caption position-absolute p-2">
+                                        <a href="#">
+                                            <h5>ست اداری جواهری شرکت باقریان</h5>
+                                        </a>
+                                        <div class="sample_img_OnHover pt-3">
+                                            <p>تبلیغ برای چه سازمانی صورت گرفت : لورم ایپسوم متن ساختگی ...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-12 d-block Column__3 me-md-2 me-0">
+                                <article class="Sample_item position-relative">
+                                    <a href="#"><img src="./assets/img/Sample_3.jpg" alt="" class="w-100 h-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__7.png');"></span>
+                                        </div>
+                                    </a>
+                                    <div class="sample_img_caption position-absolute p-2">
+                                        <a href="#">
+                                            <h5>چاپ کیف دستی پارچه ای</h5>
+                                        </a>
+                                        <div class="sample_img_OnHover pt-3">
+                                            <p>امروزه دیگر چاپ روی نایلون های پلاستیکی در نظر اها ...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="Sample_item position-relative">
+                                    <a href="#"><img src="./assets/img/Sample_6.jpg" alt="" class="w-100 h-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__8.png');"></span>
+                                        </div>
+                                    </a>
+                                    <div class="sample_img_caption position-absolute p-2">
+                                        <a href="#">
+                                            <h5>ست اداری هاکوپیان</h5>
+                                        </a>
+                                        <div class="sample_img_OnHover pt-3">
+                                            <p>تبلیغ برای چه سازمانی صورت گرفت : لورم ایپسوم متن ساختگی ...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="Sample_item position-relative">
+                                    <a href="#"><img src="./assets/img/Sample_9.jpg" alt="" class="w-100 h-100">
+                                        <div class="card-img-overlay">
+                                            <span class="brand_logo"
+                                                style="background-image: url('./assets/img/customer_brand__9.png');"></span>
+                                        </div>
+                                    </a>
+                                    <div class="sample_img_caption position-absolute p-2">
+                                        <a href="#">
+                                            <h5>لوگوی شرکت اسپات</h5>
+                                        </a>
+                                        <div class="sample_img_OnHover pt-3">
+                                            <p>تبلیغ برای چه سازمانی صورت گرفت : لورم ایپسوم متن ساختگی ...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="More_Samples text-center col-12 mt-5">
+                            <a href="#"><button type="button" class="py-2 px-4 rounded-3">مشاهده بیشتر</button></a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <section class="About_Us-Index mt-4 pt-3 mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="About-us_title col-12 pt-5 text-center">
+                        <h4 class="position-relative">درباره ما</h4>
+                    </div>
+                    <div class="About-us_content col-12 d-flex flex-wrap flex-lg-nowrap position-relative">
+                        <div class="col-lg-5 col-12 about-us-img_holder">
+                            <img src="./assets/img/About_Us.jpg" alt="درباره ما" class="w-100">
+                        </div>
+                        <div class="col-lg-7 col-12 about-us-description p-5 h-75">
+                            <div class="col-12">
+                                <h4>چرا تحلیلگران؟</h4>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <p>
+                                    شرکت مهندسی شبکه و فناوری اطلاعات تحلیلگران یک شرکت خصوصی با ماهیت IT می باشد. این
+                                    شرکت
+                                    در سال 1388 توسط کارشناسان مجرب در این زمینه، شروع به کار نموده و اکنون صاحب
+                                    افتخارات
+                                    بسیاری در زمینه شبکه و امنیت، تولید محتوای الکترونیکی، آموزش های الکترونیکی،
+                                    مجازی سازی و پردازش ابری می باشد.
+                                </p>
+                            </div>
+                            <div class="col-12 mt-4" style="text-align: left;">
+                                <a href="./About__Us.html"><button type="button" class="rounded-3 px-4 py-2">بیشتر
+                                        بدانید</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Specials mt-5 mb-5" style="background-image: url('./assets/img/Special_bg.jpg');">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="specials__holder pt-5 pb-5">
+                        <div class="Specials_title col-12 pt-3 text-center">
+                            <h4 class="position-relative">خدمات ویژه</h4>
+                        </div>
+                        <div class="Specials_content col-12">
+                            <div class="owl-specials owl-carousel owl-rtl owl-theme">
+                                <div class="special-owl_item ">
+                                    <a href="#"><img src="./assets/img/Sample_4.jpg" alt="" class=" w-100"></a>
+                                    <div class="item_img-caption">
+                                        <div class="inner-caption border w-100 h-100 p-4">
+                                            <article class="col-12">
+                                                <h5>ست اداری شرکت مانا</h5>
+                                            </article>
+                                            <article class="col-12">
+                                                <p>تبلیغ برای چه سازمانی صورت گرقته : لورم ایپسوم متن ساختگی برای تولید
+                                                    متن جهت استفاده در صنعت چاپ و تولید متن مورد استفاده در طراحی گرافیک
+                                                    یا ...</p>
+                                            </article>
+                                            <article class="col-12 position-absolute special_link"><a href="#"><i
+                                                        class="bi bi-arrow-right"></i> ادامه مطلب</a></article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="special-owl_item ">
+                                    <a href="#"><img src="./assets/img/Sample_1.jpg" alt="" class=" w-100"></a>
+                                    <div class="item_img-caption">
+                                        <div class="inner-caption border w-100 h-100 p-4">
+                                            <article class="col-12">
+                                                <h5>ست اداری شرکت مانا</h5>
+                                            </article>
+                                            <article class="col-12">
+                                                <p>تبلیغ برای چه سازمانی صورت گرقته : لورم ایپسوم متن ساختگی برای تولید
+                                                    متن جهت استفاده در صنعت چاپ و تولید متن مورد استفاده در طراحی گرافیک
+                                                    یا ...</p>
+                                            </article>
+                                            <article class="col-12 position-absolute special_link"><a href="#"><i
+                                                        class="bi bi-arrow-right"></i> ادامه مطلب</a></article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="special-owl_item ">
+                                    <a href="#"><img src="./assets/img/Sample_9.jpg" alt="" class=" w-100"></a>
+                                    <div class="item_img-caption">
+                                        <div class="inner-caption border w-100 h-100 p-4">
+                                            <article class="col-12">
+                                                <h5>ست اداری شرکت مانا</h5>
+                                            </article>
+                                            <article class="col-12">
+                                                <p>تبلیغ برای چه سازمانی صورت گرقته : لورم ایپسوم متن ساختگی برای تولید
+                                                    متن جهت استفاده در صنعت چاپ و تولید متن مورد استفاده در طراحی گرافیک
+                                                    یا ...</p>
+                                            </article>
+                                            <article class="col-12 position-absolute special_link"><a href="#"><i
+                                                        class="bi bi-arrow-right"></i> ادامه مطلب</a></article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="special-owl_item ">
+                                    <a href="#"><img src="./assets/img/Sample_2.jpg" alt="" class=" w-100"></a>
+                                    <div class="item_img-caption">
+                                        <div class="inner-caption border w-100 h-100 p-4">
+                                            <article class="col-12">
+                                                <h5>ست اداری شرکت مانا</h5>
+                                            </article>
+                                            <article class="col-12">
+                                                <p>تبلیغ برای چه سازمانی صورت گرقته : لورم ایپسوم متن ساختگی برای تولید
+                                                    متن جهت استفاده در صنعت چاپ و تولید متن مورد استفاده در طراحی گرافیک
+                                                    یا ...</p>
+                                            </article>
+                                            <article class="col-12 position-absolute special_link"><a href="#"><i
+                                                        class="bi bi-arrow-right"></i> ادامه مطلب</a></article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="special-owl_item ">
+                                    <a href="#"><img src="./assets/img/Sample_5.jpg" alt="" class=" w-100"></a>
+                                    <div class="item_img-caption">
+                                        <div class="inner-caption border w-100 h-100 p-4">
+                                            <article class="col-12">
+                                                <h5>ست اداری شرکت مانا</h5>
+                                            </article>
+                                            <article class="col-12">
+                                                <p>تبلیغ برای چه سازمانی صورت گرقته : لورم ایپسوم متن ساختگی برای تولید
+                                                    متن جهت استفاده در صنعت چاپ و تولید متن مورد استفاده در طراحی گرافیک
+                                                    یا ...</p>
+                                            </article>
+                                            <article class="col-12 position-absolute special_link"><a href="#"><i
+                                                        class="bi bi-arrow-right"></i> ادامه مطلب</a></article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="special-owl_item ">
+                                    <a href="#"><img src="./assets/img/Sample_8.jpg" alt="" class=" w-100"></a>
+                                    <div class="item_img-caption">
+                                        <div class="inner-caption border w-100 h-100 p-4">
+                                            <article class="col-12">
+                                                <h5>ست اداری شرکت مانا</h5>
+                                            </article>
+                                            <article class="col-12">
+                                                <p>تبلیغ برای چه سازمانی صورت گرقته : لورم ایپسوم متن ساختگی برای تولید
+                                                    متن جهت استفاده در صنعت چاپ و تولید متن مورد استفاده در طراحی گرافیک
+                                                    یا ...</p>
+                                            </article>
+                                            <article class="col-12 position-absolute special_link"><a href="#"><i
+                                                        class="bi bi-arrow-right"></i> ادامه مطلب</a></article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-navs_holder text-center mt-5">
+                                <button type="button" class="ms-5 special-nav-prev"><i
+                                        class="bi bi-arrow-right"></i></button>
+                                <button type="button" class="me-5 special-nav-next"><i
+                                        class="bi bi-arrow-left"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Customers-Index mt-5 mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="Customers_title col-12 pt-5 text-center">
+                        <h4 class="position-relative">مشتریان</h4>
+                    </div>
+                    <div class="Customers_content d-flex flex-lg-nowrap flex-wrap">
+                        <div class="col-lg-6 col-12 inner-owl h-75 p-4">
+                            <div class="inner_title">
+                                <h5>نظرات مشتریان</h5>
+                            </div>
+                            <div class="owl-customers owl-carousel owl-theme owl-rtl mt-5">
+                                <div class="customers-owl_item">
+                                    <div class="user_detail col-12">
+                                        <span class="d-flex justify-content-start">
+                                            <img src="./assets/img/comment-single__1.jpg" alt="مشتری">
+                                            <span class="d-block pt-3 me-3">
+                                                <h5>علی قلیزاده</h5>
+                                                <p class="user-job_position">فرانت اند</p>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="user_feed col-12 mt-4 px-4">
+                                        <p> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                            برای
+                                            شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                                            کاربردی می باشد.</p>
+                                    </div>
+                                </div>
+                                <div class="customers-owl_item">
+                                    <div class="user_detail col-12">
+                                        <span class="d-flex justify-content-start">
+                                            <img src="./assets/img/comment-single__2.jpg" alt="مشتری">
+                                            <span class="d-block pt-3 me-3">
+                                                <h5>امیرحسین پوران</h5>
+                                                <p class="user-job_position">بازاریاب</p>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="user_feed col-12 mt-4 px-4">
+                                        <p> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                            برای
+                                            شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                                            کاربردی می باشد.</p>
+                                    </div>
+                                </div>
+                                <div class="customers-owl_item">
+                                    <div class="user_detail col-12">
+                                        <span class="d-flex justify-content-start">
+                                            <img src="./assets/img/comment-single__3.jpg" alt="مشتری">
+                                            <span class="d-block pt-3 me-3">
+                                                <h5>حسین حسن پور</h5>
+                                                <p class="user-job_position">گرافیست</p>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="user_feed col-12 mt-4 px-4">
+                                        <p> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                            برای
+                                            شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                                            کاربردی می باشد.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-12 Customers-img_holder mt-5">
+                            <img src="./assets/img/Customers.jpg" alt="درباره ما" class="w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="News-Index mt-5 pb-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="News_title col-12 pt-5 text-center">
+                        <h4 class="position-relative">اخبار</h4>
+                    </div>
+                    <div class="News_content col-12 pt-4 d-flex flex-wrap flex-lg-nowrap">
+                        <section class="News-owl owl-carousel owl-rtl">
+                            <div class="News-owl_item">
+                                <div class="card">
+                                    <a href="#"><img src="https://picsum.photos/700/700" class="card-img-top"
+                                            alt=""></a>
+                                    <div class="card_img-overlay">
+                                        <span><a href="#">
+                                                <h5>برنامه نویسی</h5>
+                                            </a></span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card_title"><a href="#">آپدیت ریکت از زبان مارک</a></div>
+                                        <div class="card_body">
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                                طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+                                                هدف بهبود ابزارهای کاربردی می باشد </p>
+                                        </div>
+                                        <div class="card_footer d-flex justify-content-between">
+                                            <article class="d-flex"><i class="bi bi-calendar4"></i><span class="me-2">۸
+                                                    آذر ۱۳۹۹</span></article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="News-owl_item">
+                                <div class="card">
+                                    <a href="#"><img src="https://picsum.photos/300/300" class="card-img-top"
+                                            alt=""></a>
+                                    <div class="card_img-overlay">
+                                        <span><a href="#">
+                                                <h5>برنامه نویسی</h5>
+                                            </a></span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card_title"><a href="#">آپدیت ریکت از زبان مارک</a></div>
+                                        <div class="card_body">
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                                طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+                                                هدف بهبود ابزارهای کاربردی می باشد </p>
+                                        </div>
+                                        <div class="card_footer d-flex justify-content-between">
+                                            <article class="d-flex"><i class="bi bi-calendar4"></i><span class="me-2">۸
+                                                    آذر ۱۳۹۹</span></article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="News-owl_item">
+                                <div class="card">
+                                    <a href="#"><img src="https://picsum.photos/400/400" class="card-img-top"
+                                            alt=""></a>
+                                    <div class="card_img-overlay">
+                                        <span><a href="#">
+                                                <h5>برنامه نویسی</h5>
+                                            </a></span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card_title"><a href="#">آپدیت ریکت از زبان مارک</a></div>
+                                        <div class="card_body">
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                                طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+                                                هدف بهبود ابزارهای کاربردی می باشد </p>
+                                        </div>
+                                        <div class="card_footer d-flex justify-content-between">
+                                            <article class="d-flex"><i class="bi bi-calendar4"></i><span class="me-2">۸
+                                                    آذر ۱۳۹۹</span></article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="News-owl_item">
+                                <div class="card">
+                                    <a href="#"><img src="https://picsum.photos/800/800" class="card-img-top"
+                                            alt=""></a>
+                                    <div class="card_img-overlay">
+                                        <span><a href="#">
+                                                <h5>برنامه نویسی</h5>
+                                            </a></span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card_title"><a href="#">آپدیت ریکت از زبان مارک</a></div>
+                                        <div class="card_body">
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                                طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+                                                هدف بهبود ابزارهای کاربردی می باشد </p>
+                                        </div>
+                                        <div class="card_footer d-flex justify-content-between">
+                                            <article class="d-flex"><i class="bi bi-calendar4"></i><span class="me-2">۸
+                                                    آذر ۱۳۹۹</span></article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="News-owl_item">
+                                <div class="card">
+                                    <a href="#"><img src="https://picsum.photos/900/900" class="card-img-top"
+                                            alt=""></a>
+                                    <div class="card_img-overlay">
+                                        <span><a href="#">
+                                                <h5>برنامه نویسی</h5>
+                                            </a></span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card_title"><a href="#">آپدیت ریکت از زبان مارک</a></div>
+                                        <div class="card_body">
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                                طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+                                                هدف بهبود ابزارهای کاربردی می باشد </p>
+                                        </div>
+                                        <div class="card_footer d-flex justify-content-between">
+                                            <article class="d-flex"><i class="bi bi-calendar4"></i><span class="me-2">۸
+                                                    آذر ۱۳۹۹</span></article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="News-owl_item">
+                                <div class="card">
+                                    <a href="#"><img src="https://picsum.photos/1000/1000" class="card-img-top"
+                                            alt=""></a>
+                                    <div class="card_img-overlay">
+                                        <span><a href="#">
+                                                <h5>برنامه نویسی</h5>
+                                            </a></span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card_title"><a href="#">آپدیت ریکت از زبان مارک</a></div>
+                                        <div class="card_body">
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                                طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+                                                هدف بهبود ابزارهای کاربردی می باشد </p>
+                                        </div>
+                                        <div class="card_footer d-flex justify-content-between">
+                                            <article class="d-flex"><i class="bi bi-calendar4"></i><span class="me-2">۸
+                                                    آذر ۱۳۹۹</span></article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="More_News text-center col-12 mt-5">
+                        <a href="./News_List.html"><button type="button" class="py-2 px-4 rounded-3">مشاهده
+                                بیشتر</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Entries-Index mt-5 mb-0 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="Entries_title col-12 pt-5 text-center">
+                        <h4 class="position-relative">وبلاگ</h4>
+                    </div>
+                    <div class="Entries_content col-12 d-flex justify-content-around flex-wrap flex-lg-nowrap">
+                        <div class="card col-lg-4 col-md-6 col-12 ms-lg-3">
+                            <a href="#"><img src="./assets/img/Entrie__1.jpg" alt="" class="card-img-top"></a>
+                            <div class="card-body">
+                                <div class="card_detail d-flex justify-content-evenly">
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-calendar4 ms-2"></i><span>۲۷ آذر ۱۳۹۷</span></article>
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-chat-square ms-2"></i><span>۰</span></article>
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-person ms-2"></i><span>admin</span></article>
+                                </div>
+                                <div class="card_title mt-3">
+                                    <h6>بروشور چیست و چه مزایایی دارد؟</h6>
+                                </div>
+                                <div class="card_content">
+                                    <p> شرکت های بزرگ و کوچک به عنوان راهی برای تبلیغ به بروشور نیاز دارند.بروشور یک روش
+                                        مختصر برای به اشتراک گذاشتن اطلاعات و تشویق مردم برای خریدمحصولات و خدمات می
+                                        باشد. بروشور یک ابزار فروش و بازاریابی ملموس ...</p>
+                                </div>
+                                <div class="card_link"><a href="#">ادامه مطلب <i class="bi bi-arrow-left"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="card col-lg-4 col-md-6 col-12 ms-lg-3 pe-0 mt-lg-0 mt-3">
+                            <a href="#"><img src="./assets/img/Entrie__2.jpg" alt="" class="card-img-top"></a>
+                            <div class="card-body">
+                                <div class="card_detail d-flex justify-content-evenly">
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-calendar4 ms-2"></i><span>۲۷ آذر ۱۳۹۷</span></article>
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-chat-square ms-2"></i><span>۰</span></article>
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-person ms-2"></i><span>admin</span></article>
+                                </div>
+                                <div class="card_title mt-3">
+                                    <h6>بازاریابی دیجیتال چیست؟</h6>
+                                </div>
+                                <div class="card_content">
+                                    <p>در مقابل، بازاریابی دیجیتال در دنیای دیجیتال انجام می شود. بازاریابی دیجیتال هر
+                                        نوع بازاریابی است که شرکت در دنیای آنلاین انجام می دهد. از جمله این روش ها می
+                                        توان به تبلیغات پولی رسانه های اجتماعی، بازاریابی ایمیلی، تبلیغات ...</p>
+                                </div>
+                                <div class="card_link"><a href="#">ادامه مطلب <i class="bi bi-arrow-left"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="card col-lg-4 col-md-6 col-12 mt-lg-0 mt-3">
+                            <a href="#"><img src="./assets/img/Entrie__3.jpg" alt="" class="card-img-top"></a>
+                            <div class="card-body">
+                                <div class="card_detail d-flex justify-content-evenly">
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-calendar4 ms-2"></i><span>۲۷ آذر ۱۳۹۷</span></article>
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-chat-square ms-2"></i><span>۰</span></article>
+                                    <article class="d-flex justify-content-around"><i
+                                            class="bi bi-person ms-2"></i><span>admin</span></article>
+                                </div>
+                                <div class="card_title mt-3">
+                                    <h6>ست اداری شامل چه اقلامی می شود؟</h6>
+                                </div>
+                                <div class="card_content">
+                                    <p>چاپ ست اداری برای شرکت‌ها و مشاغل از اهمیت ویژه‌ای برخوردار است. اقلام ست اداری
+                                        در یک قالب و یک رنگ به صورت هماهنگ با یکدیگر طراحی و چاپ می‌شوند. قالب به کار
+                                        رفته در طراحی و اطلاعات نوشتاری ثبت ...</p>
+                                </div>
+                                <div class="card_link"><a href="#">ادامه مطلب <i class="bi bi-arrow-left"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Entries_load-more col-12 text-center">
+                        <a href="./blog-list.html" class="rounded-3">مشاهده بیشتر</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-------------- Main-------------->
+
+
+    <!-------------- Footer-------------->
+    <footer style="background-image: url('./assets/img/footer_bg.jpg');">
+        <section class="Footer" style="background-color: #040f1dd0;background-attachment: fixed;">
+            <div class="container">
+                <!--upper row-->
+                <div class="row d-flex">
+                    <div class="col-lg-7 col-md-12 col-12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators align-items-center justify-content-between">
+                            <p>وبینار تحلیلگران</p>
+                            <span></span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between pt-3">
+                            <div class="footer-logo ms-3">
+                                <a href="./index.html">
+                                    <img src="https://picsum.photos/500/400" alt="تحلیلگران" class="rounded">
+                                </a>
+                            </div>
+                            <div>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-8 col-12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators align-items-center justify-content-between">
+                            <p>
+                                خبر نامه
+                            </p>
+                           <span></span>
+                        </div>
+                        <div class="GetNews mt-4">
+                            <div>
+                                <p>اطلاع از آخرین اخبار</p>
+                            </div>
+                            <div class="d-flex position-relative">
+                                <input class="rounded-end rounded-start" type="email" class="w-100">
+                                <button id="getnews_btn" class="rounded-start" type="submit">ارسال</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--lower row-->
+                <div class="row d-flex flex-wrap flex-lg-nowrap mt-4">
+                    <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators align-items-center justify-content-between">
+                            <p>برچسب ها</p><span></span>
+                        </div>
+                        <div class="d-flex flex-wrap Tags">
+                            <p>تحلیلگران</p>
+                            <p>نرم افزار</p>
+                            <p>شبکه</p>
+                            <p>وبینار</p>
+                            <p>دانش بنیان</p>
+                            <p>برنامه نویسی</p>
+                            <p>هاست</p>
+                            <p>آموزش مجازی</p>
+                            <p>پارک علم و فناوری</p>
+                            <p>سرور مجازی</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators justify-content-between align-items-center">
+                            <p>دسترسی</p><span></span>
+                        </div>
+                        <div class="accessibility">
+                            <a href="./index.html"> <span class="link-arrow"></span> صفحه اصلی</a>
+                            <a href="./News_List.html"> <span class="link-arrow"></span> اخبار</a>
+                            <a href="./blog-list.html"> <span class="link-arrow"></span> وبلاگ</a>
+                            <a href="./Job_Opportunity-list.html"> <span class="link-arrow"></span> فرصت همکاری</a>
+                            <a href="./About__Us.html"> <span class="link-arrow"></span> درباره ما</a>
+                            <a href="./Contact__Us.html"> <span class="link-arrow"></span> تماس ما</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col12 mt-5 mt-md-0">
+                        <div class="d-flex footer-title-seprators align-items-center justify-content-between">
+                            <p>نماد ها</p><span></span>
+                        </div>
+                        <div class="samples d-flex justify-content-around flex-wrap">
+                            <a href="#"><img src="./assets/img/Enamad.png" alt="نماد اعتماد الکترونیکی"></a>
+                            <a href="#"><img src="./assets/img/samandehi.png" alt="نشان ثبت اعتماد الکترونیکی"></a>
+                            <a href="#"><img src="./assets/img/logo (1).png" alt="عضو اتحادیه کسب و کار های مجازی"></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <section class="copyrights">
+                    <p> © تمام حقوق برای شرکت تحلیلگران محفوظ است.</p>
+                </section>
+            </div>
+        </section>
+    </footer>
+    <!-------------- Footer-------------->
+
+
+
+    <!-------------- Scripts-------------->
+    <script src="./assets/js/jQuery/jQuery.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.js"></script>
+    <script src="./assets/js/OwlCarousel/owl.carousel.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+</body>
+
+</html>
